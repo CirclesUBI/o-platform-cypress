@@ -23,3 +23,12 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+/// <reference types="cypress" />
+
+import cypress = require("cypress");
+
+
+Cypress.Commands.add('getByI18nKey', (selector) => {
+  return cy.get(`[data-i18n-key="${selector}"]`)
+});

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["es5", "dom"],
-    "types": ["cypress", "node"]
+    "types": ["cypress", "node"],
+    "baseUrl": "https://o-platform.localhost"
   },
   "include": ["**/*.ts", "cypress/e2e/home_page.cy.ts"]
 }
