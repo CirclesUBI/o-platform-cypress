@@ -32,3 +32,7 @@ import cypress = require("cypress");
 Cypress.Commands.add('getByI18nKey', (selector) => {
   return cy.get(`[data-i18n-key="${selector}"]`)
 });
+
+Cypress.Commands.add("getById", (selector) => {
+  return cy.get(`[id="${selector}"]`)
+});
