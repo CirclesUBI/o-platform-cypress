@@ -12,7 +12,7 @@ export default defineConfig({
         if (browser.family === 'chromium' && browser.name !== 'electron') {
           // Mac/Linux
           launchOptions.args.push(
-              '--use-file-for-fake-video-capture=cypress/fixtures/Person_1.y4m'
+              '--use-file-for-fake-video-capture=/fixtures/Person_1.y4m'
           )
         }
 
