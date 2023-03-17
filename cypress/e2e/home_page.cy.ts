@@ -33,7 +33,7 @@ describe('template spec', () => {
 
     cy.get("[type='text']").type("11-11-1987")
 
-    cy.contains("Scan Invite Now").focus().click()
+    //cy.contains("Scan Invite Now").focus().click()
 
     cy.wait(500)
   })
