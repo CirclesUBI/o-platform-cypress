@@ -10,7 +10,7 @@ export default defineConfig({
       on('before:browser:launch', (browser:any = {}, launchOptions) => {
         if (browser.family === 'chromium' && browser.name !== 'electron') {
           launchOptions.args.push(
-              '--use-file-for-fake-video-capture=/o-platform-cypress/cypress/fixtures/Person_1.y4m'
+              '--use-fake-device-for-media-stream --use-file-for-fake-video-capture=/o-platform-cypress/cypress/fixtures/Person_1.y4m'
           )
         }
 
