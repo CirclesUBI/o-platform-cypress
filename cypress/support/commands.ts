@@ -36,3 +36,7 @@ Cypress.Commands.add('getByI18nKey', (selector) => {
 Cypress.Commands.add("getById", (selector) => {
   return cy.get(`[id="${selector}"]`)
 });
+
+Cypress.Commands.add("getByClass", (selector) => {
+  return cy.get(`[class="${selector}"]`)
+});

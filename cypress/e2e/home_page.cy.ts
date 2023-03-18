@@ -27,14 +27,24 @@ describe('template spec', () => {
 
     cy.contains("Next").should("exist").click()
 
-    cy.get("select").each(($el) => {
-      cy.wrap($el).select(1)
+
+    // Datepicker
+    cy.getById("my-picker").click()
+
+    cy.getByClass("numInput cur-year").type("1986")
+
+    cy.getByClass("flatpickr-monthDropdown-months").select("November")
+
+    cy.contains("21").click()
+
+    //
+
+    cy.getByClass("grow text-base svelte-qnrv71 select").each(($input) => {
+      cy.wrap($input).select(1)
     })
 
-    cy.get("[type='text']").type("11-11-1987")
 
     cy.contains("Scan Invite Now").focus().click()
 
-    cy.wait(500)
   })
 })
