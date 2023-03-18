@@ -2,5 +2,9 @@
   "devDependencies": {
     "cypress": "^12.5.1",
     "typescript": "^4.9.5"
+  },
+  "scripts": {
+    "cy:open": "cp ../land-local/modes/from-source/.state/static-content/public/Person_1.y4m ./cypress/fixtures || exit && cypress open",
+    "cy:run": "cypress run"
   }
 }
