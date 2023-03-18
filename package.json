@@ -4,7 +4,7 @@
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "cy:open": "cp ../land-local/modes/from-source/.state/static-content/public/Person_1.y4m ./cypress/fixtures || exit && cypress open",
+    "cy:open": "cp -f ../land-local/modes/from-source/.state/static-content/public/Person_1.y4m ./cypress/fixtures || exit && cypress open",
     "cy:run": "cypress run"
   }
 }
