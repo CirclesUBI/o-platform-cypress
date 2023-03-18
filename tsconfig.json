@@ -3,7 +3,8 @@
     "target": "es5",
     "lib": ["es5", "dom"],
     "types": ["cypress", "node"],
-    "baseUrl": "https://o-platform.localhost"
+    "baseUrl": "https://o-platform.circlesubi.localhost",
+    "outDir": "dist",
   },
   "include": ["**/*.ts", "cypress/e2e/home_page.cy.ts"]
 }
