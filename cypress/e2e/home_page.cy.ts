@@ -65,7 +65,9 @@ describe('template spec', () => {
 
     cy.get('button').filter(':contains("Submit")').click()
 
-    cy.getById("pacInput").type("")
+    cy.getById("pacInput").type("Angkah selemadeg barat");
+    cy.get('.pac-item').first().click();
+    cy.contains('Submit vote').click();
 
   })
 })
