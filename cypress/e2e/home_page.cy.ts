@@ -48,7 +48,10 @@ describe('template spec', () => {
 
     cy.contains("Next").should("exist").click()
     cy.contains("Sign up Now").should("exist").click()
+    cy.contains("SIGN IN NOW").should("exist").click()
 
+    // Get all 'button' elements and filter them by their text value
+    cy.get('button').filter(':contains("Create new")').click()
 
   })
 })
