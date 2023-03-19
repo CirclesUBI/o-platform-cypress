@@ -47,6 +47,7 @@ describe('template spec', () => {
     cy.contains("Scan Invite Now").focus().click()
 
     cy.contains("Next").should("exist").click()
+    cy.contains("Sign up Now").should("exist").click()
 
 
   })
