@@ -53,5 +53,19 @@ describe('template spec', () => {
     // Get all 'button' elements and filter them by their text value
     cy.get('button').filter(':contains("Create new")').click()
 
+    cy.getById("firstName").type("Derbe")
+
+    cy.get('button').filter(':contains("Save")').click()
+
+    cy.getById("lastName").type("Nutzer")
+
+    cy.get('button').filter(':contains("Save")').click()
+
+    cy.get("input[type=file]").selectFile("./cypress/fixtures/Person.png", {force: true})
+
+    cy.get('button').filter(':contains("Submit")').click()
+
+    cy.getById("pacInput").type("")
+
   })
 })
