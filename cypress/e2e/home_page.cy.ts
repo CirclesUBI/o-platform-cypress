@@ -61,7 +61,7 @@ describe('template spec', () => {
 
     cy.get('button').filter(':contains("Save")').click()
 
-    cy.get("input[type=file]").selectFile("./cypress/fixtures/Person.png", {force: true})
+    cy.get("input[type=file]").selectFile("./cypress/static/Person.png", {force: true})
 
     cy.get('button').filter(':contains("Submit")').click()
 
