@@ -7,6 +7,7 @@ export default defineConfig({
     "*.localhost": "127.0.0.1"
   },
   e2e: {
+    // testIsolation: false,
     baseUrl: "https://o-platform.circlesubi.localhost",
     setupNodeEvents(on, config) {
       on('before:browser:launch', (browser:any = {}, launchOptions) => {

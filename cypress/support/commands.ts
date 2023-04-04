@@ -43,7 +43,6 @@ Cypress.Commands.add("getByClass", (selector) => {
 });
 
 Cypress.Commands.add("signUp", () => {
-  cy.visit("/");
   cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow")
     .should("exist")
     .click();
@@ -111,8 +110,10 @@ Cypress.Commands.add("signUp", () => {
 
   cy.getById("pacInput").type("Angkah selemadeg barat");
   cy.get(".pac-item", { timeout: 10000}).should("be.visible").first().click();
-  cy.contains("Submit vote").click();
+  cy.contains("Submit").click();
 });
+
+
 
 Cypress.Commands.add("createNewShop", () => {
   cy.contains("passport").should("exist").click();
