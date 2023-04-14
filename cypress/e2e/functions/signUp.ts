@@ -1,4 +1,4 @@
-import {getRandomPersonName} from "../../src/utils/randomNames";
+import { getRandomPersonName } from "../../src/utils/randomNames";
 
 export const signUp = () => {
   cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow")
@@ -6,8 +6,12 @@ export const signUp = () => {
     .click();
 
   cy.on("uncaught:exception", (err, runnable) => {
-    if (err.message.includes("Cannot read properties of null (reading 'circlesAddress')")) {
-      return false
+    if (
+      err.message.includes(
+        "Cannot read properties of null (reading 'circlesAddress')"
+      )
+    ) {
+      return false;
     }
   });
 
@@ -72,9 +76,15 @@ export const signUp = () => {
 
   cy.get("button").filter(':contains("Submit")').click();
 
-  cy.getById("pacInput").type("Angkah selemadeg barat");
-  cy.getById("pacInput").type("Angkah selemadeg barat");
+  it("sets the location", { retries: 3 }, () => {
+    cy.getById("pacInput").type("Angkah selemadeg barat");
+    cy.get(".pac-item", { timeout: 10000 })
+      .should("be.visible")
+      .first()
+      .click();
+  });
 
-  cy.get(".pac-item", { timeout: 10000}).should("be.visible").first().click();
+  //cy.getById("pacInput").type("Angkah selemadeg barat");
+
   cy.contains("Submit").click();
-}
+};
