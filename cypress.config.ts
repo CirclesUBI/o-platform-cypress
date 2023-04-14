@@ -7,15 +7,6 @@ export default defineConfig({
     "*.localhost": "127.0.0.1",
   },
   e2e: {
-    // retries: {
-    //   // Configure retry attempts for `cypress run`
-    //   // Default is 0
-    //   runMode: 2,
-    //   // Configure retry attempts for `cypress open`
-    //   // Default is 0
-    //   openMode: 0,
-    // },
-    // testIsolation: false,
     baseUrl: "https://o-platform.circlesubi.localhost",
     setupNodeEvents(on, config) {
       on("before:browser:launch", (browser: any = {}, launchOptions) => {
