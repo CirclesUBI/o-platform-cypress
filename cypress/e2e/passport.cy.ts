@@ -1,4 +1,4 @@
-import { signUp } from "./functions/signUp";
+import { signUp } from "./testModules/signUp";
 
 describe("Passport", { testIsolation: false }, () => {
   it("create account and login", { retries: 3 }, () => {

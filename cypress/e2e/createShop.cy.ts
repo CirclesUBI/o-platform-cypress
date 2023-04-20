@@ -1,5 +1,5 @@
-import { createNewShop } from "./functions/createNewShop";
-import { signUp } from "./functions/signUp";
+import { createNewShop } from "./testModules/createNewShop";
+import { signUp } from "./testModules/signUp";
 
 describe("create a shop", { testIsolation: false }, () => {
   it("clears all cookies, sessionStorage and localStorage", () => {

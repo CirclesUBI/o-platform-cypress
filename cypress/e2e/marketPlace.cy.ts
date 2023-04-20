@@ -1,4 +1,4 @@
-import { signUp } from "./functions/signUp";
+import { signUp } from "./testModules/signUp";
 
 describe("Marketplace", { testIsolation: false }, () => {
   it("signs up a new user", { retries: 3 }, () => {
