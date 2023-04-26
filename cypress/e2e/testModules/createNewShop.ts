@@ -27,7 +27,7 @@ export const createNewShop = () => {
     cy.get("button").filter(':contains("Save")').click();
   });
 
-  it("sets a location for the shop", () => {
+  it("sets a location for the shop", { retries: 3 }, () => {
     cy.getById("pacInput").type("Angkah selemadeg barat");
     cy.get(".pac-item").should("exist").first().click();
 

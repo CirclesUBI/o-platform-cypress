@@ -1,3 +1,4 @@
+import { loginFirstPreSeededAccount } from "./testModules/loginPreSeeded";
 import { signUp } from "./testModules/signUp";
 
 describe("Marketplace", { testIsolation: false }, () => {
@@ -7,7 +8,7 @@ describe("Marketplace", { testIsolation: false }, () => {
     cy.clearAllLocalStorage();
     cy.visit("/");
 
-    signUp();
+    loginFirstPreSeededAccount();
   });
 
   it("marketplace is available on dashboard and leads to marketlisting", () => {
@@ -32,7 +33,7 @@ describe("Marketplace", { testIsolation: false }, () => {
       .should("exist")
       .click();
 
-    cy.getByI18nKey("Favorites").first().should("exist").click();
+    cy.getByI18nKey("common.favorites").first().should("exist").click();
   });
 
   // describe("single markets", () => {

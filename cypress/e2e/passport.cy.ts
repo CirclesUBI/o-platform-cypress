@@ -15,7 +15,7 @@ describe("Passport", { testIsolation: false }, () => {
       .click();
   });
 
-  it("sets new first and lastname", () => {
+  it("sets new first- and last-name", () => {
     cy.getByClass("text-2xl cursor-pointer sm:text-4xl font-heading")
       .should("exist")
       .click();
