@@ -1,4 +1,4 @@
-import { signUp } from "./functions/signUp";
+import { signUp } from "./testModules/signUp";
 
 describe("Passport", { testIsolation: false }, () => {
   it("create account and login", { retries: 3 }, () => {
@@ -15,7 +15,7 @@ describe("Passport", { testIsolation: false }, () => {
       .click();
   });
 
-  it("sets new first and lastname", () => {
+  it("sets new first- and last-name", () => {
     cy.getByClass("text-2xl cursor-pointer sm:text-4xl font-heading")
       .should("exist")
       .click();
