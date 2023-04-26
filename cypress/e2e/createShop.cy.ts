@@ -1,5 +1,5 @@
-import { createNewShop } from "./functions/createNewShop";
-import { signUp } from "./functions/signUp";
+import { createNewShop } from "./testModules/createNewShop";
+import { loginFirstPreSeededAccount } from "./testModules/loginPreSeeded";
 
 describe("create a shop", { testIsolation: false }, () => {
   it("clears all cookies, sessionStorage and localStorage", () => {
@@ -8,7 +8,7 @@ describe("create a shop", { testIsolation: false }, () => {
     cy.clearAllLocalStorage();
     cy.visit("/");
 
-    signUp();
+    loginFirstPreSeededAccount();
   });
 
   createNewShop();

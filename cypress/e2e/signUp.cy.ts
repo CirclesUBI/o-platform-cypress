@@ -1,6 +1,7 @@
-import { signUp } from "./functions/signUp";
+import { signUp } from "./testModules/signUp";
+import { survey } from "./testModules/survey";
 
-describe("sign up", () => {
+describe("sign up", { testIsolation: false }, () => {
   it("signs up und creates an account", () => {
     cy.clearAllSessionStorage();
     cy.clearAllCookies();
@@ -8,5 +9,7 @@ describe("sign up", () => {
     cy.visit("/");
 
     signUp();
+
+    cy.visit("/");
   });
 });
