@@ -4,7 +4,7 @@ const videoInput = __dirname + "/cypress/fixtures/Person_1.y4m";
 
 export default defineConfig({
   env: {
-    keyPhrase: "forward cover photo zoo panther decrease click raise unknown meadow fold struggle know increase misery bird rifle phrase sick fashion fresh repeat someone wish",
+    keyPhrase: "forward cover photo zoo panther decrease click raise unknown meadow fold struggle know increase misery bird rifle phrase sick fashion fresh repeat someone wish"
   },
   hosts: {
     "*.localhost": "127.0.0.1",
