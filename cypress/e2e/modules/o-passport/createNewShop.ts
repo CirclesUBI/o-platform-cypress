@@ -10,13 +10,14 @@ export const createNewShop = () => {
   });
 
   it("opens shop-editor", () => {
-    cy.contains("Add new Shop").should("exist").click();
+    cy.get("button[class='btn btn-primary btn-sm']").should("exist").click();
+    // cy.contains("Add new Shop").should("exist").click();
   });
 
   it("sets a name for the shop", () => {
     cy.getById("firstName").type(companyName);
 
-    cy.get("button").filter(':contains("Save")').click();
+    cy.get("button[type='submit']").should("exist").click();
   });
 
   it("sets a description for the shop", () => {
@@ -24,14 +25,14 @@ export const createNewShop = () => {
       companyName + " Has All The Things You Need"
     );
 
-    cy.get("button").filter(':contains("Save")').click();
+    cy.get("button[type='submit']").should("exist").click();
   });
 
   it("sets a location for the shop", { retries: 3 }, () => {
     cy.getById("pacInput").type("Angkah selemadeg barat");
     cy.get(".pac-item").should("exist").first().click();
 
-    cy.get("button").filter(':contains("Save")').click();
+    cy.get("button[type='submit']").should("exist").click();
   });
 
   it("sets a logo for the shop", () => {
@@ -51,7 +52,7 @@ export const createNewShop = () => {
   });
 
   it("sets the vendor type", () => {
-    cy.getByClass("mt-1 select input w-full svelte-qnrv71").select("Sembako");
+    cy.get("select").eq(1).select("Sembako");
   });
 
   it("sets the opening hours", () => {
@@ -65,7 +66,7 @@ export const createNewShop = () => {
   });
 
   it("saves the shop", () => {
-    cy.contains("Save").each(($el) => {
+    cy.getByI18nKey("common.save").each(($el) => {
       cy.wrap($el).click();
     });
   });
