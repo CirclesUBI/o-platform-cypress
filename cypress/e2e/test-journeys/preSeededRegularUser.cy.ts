@@ -1,4 +1,4 @@
-import { loginFirstPreSeededAccount } from "../modules/loginPreSeeded";
+import { loginFirstPreSeededAccount, loginSecondPreSeededAccount } from "../modules/loginPreSeeded";
 import { bankingTests } from "../modules/o-banking/bankingTests";
 import { contactsTests } from "../modules/o-contacts/contactsTests";
 import { marketTests } from "../modules/o-marketlisting/marketTests";
@@ -24,7 +24,7 @@ describe("regular circles-user context", { testIsolation: false }, () => {
   });
   describe("login", () => {
     it("should login with first pre-seeded account", () => {
-      loginFirstPreSeededAccount();
+      loginSecondPreSeededAccount();
     });
 
   });
