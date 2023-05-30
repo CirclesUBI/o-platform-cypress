@@ -31,9 +31,9 @@ describe("regular circles-user context", { testIsolation: false }, () => {
 
   profileSettings();
 
-  bankingTests();
-
   marketTests();
 
   contactsTests();
+
+  bankingTests();
 });

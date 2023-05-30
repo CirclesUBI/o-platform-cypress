@@ -6,7 +6,7 @@ export const contactsTests = () => {
     it("should navigate to contacts dapp", () => {
       cy.visit("/#/home")
 
-      cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
+      // cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
 
       openContacts();
 

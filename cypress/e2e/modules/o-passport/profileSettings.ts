@@ -1,4 +1,5 @@
 import { openPassport } from "../o-dashboard/openPassport";
+import { openSideMenu } from "../openSideMenu";
 
 export const profileSettings = () => {
   describe("profile settings", () => {
@@ -66,11 +67,7 @@ export const profileSettings = () => {
     // });
 
     it("opens accounts from side-menu checks if circles-address is expandable", () => {
-      cy.getByClass(
-        "flex items-center justify-center w-12 h-12 ml-4 bg-passport rounded-full cursor-pointer svelte-v0kil9 text-white"
-      )
-        .should("exist")
-        .click();
+      openSideMenu("bg-passport");
 
       cy.get("a[href='/#/passport/accounts']").should("exist").click();
 
