@@ -15,13 +15,29 @@ cd o-platform-cypress
 
 npm install
 
-# Run tests in headless mode
+# Run all test-journeys in headless mode
 
-npm run cy:run
+./run.sh
+
+# Run specific test-journey in headless mode
+
+./run.sh -n FILENAME_WITHOUT_EXTENSION
 
 # Run tests in cypress-browser
 
-npm run cy:open
+./run.sh -o
+```
+
+## CLI Options
+
+Running ./run.sh without any option will, cypress will run all tests in headless mode.
+
+You can pass the following options to the `run.sh` script:
+
+```bash
+ h     Print Help.
+ o     Opens cypress in browser-mode.
+ n     Run a specific test file in headless.
 ```
 
 ## Browsers
