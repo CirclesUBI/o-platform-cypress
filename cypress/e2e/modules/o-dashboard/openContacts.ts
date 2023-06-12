@@ -1,3 +1,5 @@
 export const openContacts = () => {
-  cy.getByI18nKey("dapps.o-dashboard.pages.home.contacts").should("exist").click();
+  it("should navigate to contacts dapp", () => {
+    cy.getByI18nKey("dapps.o-dashboard.pages.home.contacts").should("exist").click();
+  });
 };
