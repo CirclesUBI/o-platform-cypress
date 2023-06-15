@@ -30,7 +30,35 @@ npm install
 
 ## CLI Options
 
-Running ./run.sh without any option will, cypress will run all tests in headless mode.
+Running ./run.sh will run Cypress tests for o-platform. By default, it will run all tests in headless mode.
+
+```bash
+./run.sh
+```
+
+To run Cypress tests in headless mode, run the script with the -n option specify a test file without extensions (e.g. preSeededRegularUser).
+
+```bash
+./run.sh -n preSeededRegularUser
+```
+
+To run Cypress tests in browser mode, run the script with the -o option.
+
+```bash
+./run.sh -o
+```
+
+To see all options, run the script with the -h option.
+
+```bash
+./run.sh -h
+```
+
+Syntax: run.sh [-h|o|n]
+options:
+h     Print this Help.
+o     Opens cypress in browser-mode.
+n     Run a specific test file in headless.
 
 You can pass the following options to the `run.sh` script:
 
