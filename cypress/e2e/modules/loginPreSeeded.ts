@@ -52,8 +52,6 @@ export const loginFirstPreSeededAccount = () => {
 
 export const loginSecondPreSeededAccount = () => {
 
-  openPassport();
-
   cy.visit("/#/passport/actions/logout");
 
   cy.wait(5000);
