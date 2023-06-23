@@ -6,16 +6,6 @@ export const signUp = () => {
     .should("exist")
     .click();
 
-  cy.on("uncaught:exception", (err, runnable) => {
-    if (
-      err.message.includes(
-        "Cannot read properties of null (reading 'circlesAddress')"
-      )
-    ) {
-      return false;
-    }
-  });
-
   cy.get("button[class='btn btn-block btn btn-outline']").eq(1).should("exist").click();
 
   //cy.contains("Login with Apple").should("exist").click();
