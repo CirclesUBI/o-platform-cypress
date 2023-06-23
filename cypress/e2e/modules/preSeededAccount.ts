@@ -9,10 +9,7 @@ export const preSeededAccount = () => {
 
     cy.visit("/#/passport/actions/login/1");
 
-
-    cy.on("uncaught:exception", (err, runnable) => {
-      return false;
-    });
+    cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
 
     cy.get("input").each(($input) => {
       cy.wrap($input).type("1");
