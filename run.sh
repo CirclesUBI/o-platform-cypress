@@ -68,9 +68,10 @@ while getopts ":ohnci:" option; do
           echo "Running Cypress tests for o-platform"
           npx cypress run --browser chromium --spec "$path/cypress/e2e/test-journeys/$test_file.cy.ts"
           exit
+        else
+          Open
         fi
-        Open  
-        exit;;
+        ;;
       \?) # Invalid option
         echo "Error: Invalid option"
         exit;;
