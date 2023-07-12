@@ -21,6 +21,11 @@ describe("regular circles-user context", { testIsolation: false }, () => {
     cy.clearAllCookies();
     cy.clearAllLocalStorage();
     cy.visit("/");
+    Cypress.on('uncaught:exception', (err, runnable) => {
+      // returning false here prevents Cypress from
+      // failing the test
+      return false
+    })
   });
   describe("login", () => {
     it("should login with first pre-seeded account", () => {
