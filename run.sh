@@ -43,7 +43,7 @@ test_file=""
 # Process the input options. Add options as needed.        #
 ############################################################
 # Get the options
-while getopts ":ohnci:" option; do
+while getopts ":ohnc:" option; do
   case $option in
       o) # Opens Cypress
         Open
@@ -61,10 +61,10 @@ while getopts ":ohnci:" option; do
           exit
         fi
         ;;
-      ci) # Run Cypress tests in headless mode for CI
+      c) # Run Cypress tests in headless mode for CI
         test_file=$OPTARG
         path=$(pwd)
-        if [[ -ci $test_file ]]; then
+        if [[ -c $test_file ]]; then
           echo "Running Cypress tests for o-platform"
           npx cypress run --browser chromium --spec "$path/cypress/e2e/test-journeys/$test_file.cy.ts"
           exit
