@@ -64,13 +64,9 @@ while getopts ":ohnc:" option; do
       c) # Run Cypress tests in headless mode for CI
         test_file=$OPTARG
         path=$(pwd)
-        if [[ -c $test_file ]]; then
           echo "Running Cypress tests for o-platform"
           npx cypress run --browser chromium --spec "$path/cypress/e2e/test-journeys/$test_file.cy.ts"
           exit
-        else
-          Open
-        fi
         ;;
       \?) # Invalid option
         echo "Error: Invalid option"
