@@ -1,6 +1,6 @@
 export const survey = () => {
 
-  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple']").should("exist").click();
+  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple text-lg']").should("exist").click();
 
   // cy.contains("Next").should("exist").click();
 
@@ -8,7 +8,7 @@ export const survey = () => {
   cy.getById("check-2").check();
   cy.getById("check-3").check();
 
-  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple']").should("exist").click();
+  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple text-lg']").should("exist").click();
 
   // cy.contains("Next").should("exist").click();
 
@@ -16,7 +16,7 @@ export const survey = () => {
   cy.getById("check-2").check();
   cy.getById("check-3").check();
 
-  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple']").should("exist").click();
+  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple text-lg']").should("exist").click();
 
   // cy.contains("Next").should("exist").click();
 
@@ -41,16 +41,16 @@ export const survey = () => {
   //   cy.wrap($input).select(1);
   // });
 
-  cy.get("button[class='px-8 overflow-hidden transition-all transform grow btn btn-primary']").should("exist").click();
+  cy.get("button[class='px-8 overflow-hidden transition-all transform grow btn btn-primary text-lg']").should("exist").click();
 
   // cy.contains("Scan Invite Now").focus().click();
 
-  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple']").should("exist").click();
+  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple text-lg']").should("exist").click();
 
 
   // cy.contains("Next").should("exist").click();
 
-  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary']").should("exist").click();
+  cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary text-lg']").should("exist").click();
 
   // cy.getByClass("relative px-16 overflow-hidden transition-all transform btn btn-primary").should("exist").click();
 
