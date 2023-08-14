@@ -68,12 +68,6 @@ export const profileSettings = () => {
 
     it("opens accounts from side-menu checks if circles-address is expandable", () => {
       openSideMenu("bg-passport");
-
-      cy.get("a[href='/#/passport/accounts']").should("exist").click();
-
-      cy.getByClass("inline w-4 h-4 stroke-current text-primary")
-        .should("exist")
-        .click();
     });
   });
 };

@@ -8,7 +8,7 @@ export const signupJourney = () => {
 
   cy.visit("/#/passport/actions/login/3");
 
-  cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
+  cy.get("button[class='relative btn btn-block btn-primary']").should("exist").click();
 
 
   cy.get("input").each(($input) => {

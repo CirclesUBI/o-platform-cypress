@@ -10,15 +10,13 @@ export const loginFirstPreSeededAccount = () => {
 
   cy.visit("/#/passport/actions/login/2");
 
-  cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
+  cy.get("button[class='relative btn btn-block btn-primary']").should("exist").click();
 
   cy.get("input").each(($input) => {
     cy.wrap($input).type("1");
   });
 
-  cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
-
-  cy.get("button[type=submit]").should("exist").click();
+  cy.get("button[class='relative btn btn-block btn-primary']").should("exist").click();
 
   cy.wait(1000);
 
@@ -58,7 +56,7 @@ export const loginSecondPreSeededAccount = () => {
 
   cy.visit("/#/passport/actions/login/3");
 
-  cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
+  cy.get("button[class='relative btn btn-block btn-primary']").should("exist").click();
 
 
   cy.get("input").each(($input) => {
