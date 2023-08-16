@@ -2,6 +2,7 @@ export const survey = () => {
 
   cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple text-lg']").should("exist").click();
 
+
   // cy.contains("Next").should("exist").click();
 
   cy.getById("check-1").check();

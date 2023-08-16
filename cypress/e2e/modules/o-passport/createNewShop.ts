@@ -11,6 +11,7 @@ export const createNewShop = () => {
 
   it("opens shop-editor", () => {
     cy.get("button[class='btn btn-primary btn-sm']").should("exist").click();
+
     // cy.contains("Add new Shop").should("exist").click();
   });
 
@@ -29,7 +30,10 @@ export const createNewShop = () => {
   });
 
   it("sets a location for the shop", { retries: 3 }, () => {
+    cy.wait(1000);
+
     cy.getById("pacInput").type("Angkah selemadeg barat");
+
     cy.get(".pac-item").should("exist").first().click();
 
     cy.get("button[type='submit']").should("exist").click();
@@ -40,7 +44,7 @@ export const createNewShop = () => {
       force: true,
     });
 
-    cy.contains("Submit").click();
+    cy.get("button[class='btn transition-all overflow-hidden transform relative btn-primary svelte-12kbnbk px-8']").should("exist").click();
   });
 
   it("sets a phonenumber for the shop", () => {

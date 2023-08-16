@@ -6,7 +6,7 @@ export const signUp = () => {
     .should("exist")
     .click();
 
-  cy.get("button[class='btn btn-block btn btn-outline']").eq(1).should("exist").click();
+  cy.get("button[class='relative btn btn-block btn-primary']").should("exist").click();
 
   //cy.contains("Login with Apple").should("exist").click();
 
@@ -47,7 +47,5 @@ export const signUp = () => {
       .click();
   });
 
-  //cy.getById("pacInput").type("Angkah selemadeg barat");
-
-  cy.get("button[type='submit']").click();
+  cy.get("button[type='submit']").click({ force: true });
 };
