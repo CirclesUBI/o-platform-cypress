@@ -1,5 +1,6 @@
 export const survey = () => {
 
+  cy.get("div[class='h-12 col-start-2 py-3 bg-white rounded-full w-36 place-self-center']").should("exist").click();
   cy.get("button[class='relative px-8 overflow-hidden transition-all transform btn btn-primary bg-primary text-cpurple text-lg']").should("exist").click();
 
 
