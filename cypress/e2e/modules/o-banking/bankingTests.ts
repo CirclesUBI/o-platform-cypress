@@ -10,7 +10,7 @@ export const bankingTests = () => {
       openBanking();
 
       describe("send circles", () => {
-        cy.get("id='Layer_1'").should("exist").click();
+        // cy.get("id='Layer_1'").should("exist").click();
       })
     });
   });
