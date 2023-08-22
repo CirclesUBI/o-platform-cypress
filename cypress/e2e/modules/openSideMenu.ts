@@ -7,7 +7,9 @@
 export const openSideMenu = (context: string) => {
   it("should open side-menu", () => {
     cy.getByClass(
-      `flex items-center justify-center w-12 h-12 ml-4 ${context} rounded-full cursor-pointer svelte-v0kil9 text-white`).should("exist")
-      .click();;
+      `flex items-center justify-center w-12 h-12 ml-4 ${context} rounded-full cursor-pointer text-white`
+    )
+      .should("exist")
+      .click();
   });
 };

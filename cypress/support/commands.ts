@@ -27,19 +27,21 @@
 /// <reference types="cypress" />
 
 //import cypress = require("cypress");
-import {getRandomCompanyName, getRandomPersonName} from "../src/utils/randomNames";
+import {
+  getRandomCompanyName,
+  getRandomPersonName,
+} from "../src/utils/randomNames";
 
-
-Cypress.Commands.add('getByI18nKey', (selector) => {
-  return cy.get(`[data-i18n-key="${selector}"]`)
+Cypress.Commands.add("getByI18nKey", (selector) => {
+  return cy.get(`[data-i18n-key="${selector}"]`);
 });
 
 Cypress.Commands.add("getById", (selector) => {
-  return cy.get(`[id="${selector}"]`)
+  return cy.get(`[id="${selector}"]`);
 });
 
 Cypress.Commands.add("getByClass", (selector) => {
-  return cy.get(`[class="${selector}"]`)
+  return cy.get(`[class="${selector}"]`);
 });
 
 Cypress.Commands.add("signUp", () => {
@@ -80,7 +82,7 @@ Cypress.Commands.add("signUp", () => {
 
   //
 
-  cy.getByClass("grow text-base svelte-qnrv71 select").each(($input) => {
+  cy.getByClass("grow text-base select").each(($input) => {
     cy.wrap($input).select(1);
   });
 
@@ -109,11 +111,9 @@ Cypress.Commands.add("signUp", () => {
   cy.get("button").filter(':contains("Submit")').click();
 
   cy.getById("pacInput").type("Angkah selemadeg barat");
-  cy.get(".pac-item", { timeout: 10000}).should("be.visible").first().click();
+  cy.get(".pac-item", { timeout: 10000 }).should("be.visible").first().click();
   cy.contains("Submit").click();
 });
-
-
 
 Cypress.Commands.add("createNewShop", () => {
   cy.contains("passport").should("exist").click();
@@ -126,9 +126,7 @@ Cypress.Commands.add("createNewShop", () => {
 
   cy.get("button").filter(':contains("Save")').click();
 
-  cy.getById("description").type(
-    companyName + " Has All The Things You Need"
-  );
+  cy.getById("description").type(companyName + " Has All The Things You Need");
 
   cy.get("button").filter(':contains("Save")').click();
 
@@ -149,7 +147,7 @@ Cypress.Commands.add("createNewShop", () => {
     .find("input")
     .type("123456789");
 
-  cy.getByClass("mt-1 select input w-full svelte-qnrv71").select("Sembako");
+  cy.getByClass("mt-1 select input w-full").select("Sembako");
 
   cy.get("input[type=checkbox]").each(($el) => {
     if ($el.parent().find("label").children().first().text() === "Sunday") {
