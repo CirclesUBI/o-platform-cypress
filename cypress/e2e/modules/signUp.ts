@@ -1,35 +1,40 @@
 import { getRandomPersonName } from "../../src/utils/randomNames";
 import { survey } from "./survey";
 
+import googleMapSearch from "../components/googleMapSearch.cy";
+
+const randomName = getRandomPersonName();
+
 export const signUp = () => {
   cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow")
     .should("exist")
     .click();
 
-  cy.get("button[class='relative btn btn-block btn-primary']").should("exist").click();
+  cy.get("button[class='relative btn btn-block btn-primary']")
+    .should("exist")
+    .click();
 
-  //cy.contains("Login with Apple").should("exist").click();
-
-  cy.get("input").each(($input) => {
-    cy.wrap($input).type("1");
-  });
+  cy.get("input")
+    .should("exist")
+    .each(($input) => {
+      cy.wrap($input).type("1");
+    });
 
   cy.get("button[type=submit]").should("exist").click();
 
   survey();
 
-  cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow").should("exist").click();
-
-  // Get all 'button' elements and filter them by their text valuz
+  cy.getByI18nKey("shared.molecules.nextNav.components.loginPill.signInNow")
+    .should("exist")
+    .click();
 
   cy.get("button").eq(0).click();
 
-  //const name = getRandomPersonName();
-  cy.getById("firstName").type("John");
+  cy.getById("firstName").type(randomName.firstName);
 
   cy.get("button[type='submit']").click();
 
-  cy.getById("lastName").type("Doe");
+  cy.getById("lastName").type(randomName.lastName);
 
   cy.get("button[type='submit']").click();
 
@@ -37,15 +42,7 @@ export const signUp = () => {
     force: true,
   });
 
-  cy.get("button[class='btn transition-all overflow-hidden transform relative btn-primary svelte-12kbnbk px-8']").click();
+  cy.get(".btn").contains("Simpan").click();
 
-  it("sets the location", { retries: 3 }, () => {
-    cy.getById("pacInput").type("Angkah selemadeg barat");
-    cy.get(".pac-item", { timeout: 10000 })
-      .should("be.visible")
-      .first()
-      .click();
-  });
-
-  cy.get("button[type='submit']").click({ force: true });
+  googleMapSearch.testGoogleMapSearch();
 };

@@ -1,5 +1,11 @@
 import { getRandomCompanyName } from "../../../src/utils/randomNames";
 
+import googleMapSearch from "../../components/googleMapSearch.cy";
+
+const categorySelect = "[data-cy=categorySelect]";
+
+let randNum = Math.floor(Math.random() * 9) + 1;
+
 export const createNewShop = () => {
   const companyName = getRandomCompanyName();
 
@@ -29,22 +35,19 @@ export const createNewShop = () => {
     cy.get("button[type='submit']").should("exist").click();
   });
 
-  it("sets a location for the shop", { retries: 3 }, () => {
-    cy.wait(1000);
-
-    cy.getById("pacInput").type("Angkah selemadeg barat");
-
-    cy.get(".pac-item").should("exist").first().click();
-
-    cy.get("button[type='submit']").should("exist").click();
+  it("sets a location for the shop", () => {
+    googleMapSearch.testGoogleMapSearch();
   });
 
   it("sets a logo for the shop", () => {
-    cy.get("input[type=file]").selectFile("./cypress/static/Person.png", {
-      force: true,
-    });
+    cy.get("input[type=file]").selectFile(
+      "./cypress/static/" + randNum + ".jpg",
+      {
+        force: true,
+      }
+    );
 
-    cy.get("button[class='btn transition-all overflow-hidden transform relative btn-primary svelte-12kbnbk px-8']").should("exist").click();
+    cy.get(".btn").contains("Simpan").click();
   });
 
   it("sets a phonenumber for the shop", () => {
@@ -56,7 +59,8 @@ export const createNewShop = () => {
   });
 
   it("sets the vendor type", () => {
-    cy.get("select").eq(1).select("Sembako");
+    cy.get(categorySelect).should("exist");
+    cy.get(categorySelect).select("1");
   });
 
   it("sets the opening hours", () => {

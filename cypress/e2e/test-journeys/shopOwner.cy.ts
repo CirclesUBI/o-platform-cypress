@@ -1,5 +1,6 @@
 import { createNewShop } from "../modules/o-passport/createNewShop";
 import { loginFirstPreSeededAccount } from "../modules/loginPreSeeded";
+import { signUp } from "../modules/signUp";
 
 describe("organization context", { testIsolation: false }, () => {
   it("clears all cookies, sessionStorage and localStorage", () => {
@@ -8,9 +9,10 @@ describe("organization context", { testIsolation: false }, () => {
     cy.clearAllLocalStorage();
     cy.visit("/");
   });
-  describe("login", () => {
-    it("should login with first pre-seeded account", () => {
-      loginFirstPreSeededAccount();
+
+  describe("signup new user", () => {
+    it("should signup", () => {
+      signUp();
     });
   });
 
